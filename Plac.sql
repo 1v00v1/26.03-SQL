@@ -5,7 +5,7 @@ GO
 
 CREATE TABLE Voce(
 IDVoce int CONSTRAINT PK_Voce PRIMARY KEY IDENTITY,
-Naziv nvarchar(50) UNIQUE
+Naziv nvarchar(50) CONSTRAINT UQ_Naziv UNIQUE
 )
 
 CREATE TABLE Dobavljac(
