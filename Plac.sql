@@ -5,7 +5,7 @@ GO
 
 CREATE TABLE Voce(
 IDVoce int CONSTRAINT PK_Voce PRIMARY KEY IDENTITY,
-Naziv nvarchar(50)
+Naziv nvarchar(50) UNIQUE
 )
 
 CREATE TABLE Dobavljac(
@@ -22,7 +22,7 @@ Naziv nvarchar(50),
 MinimalnaKolicina int,
 TrenutnaKolicina int,
 NabavnaCijena float,
-prodajnaCijena float,
+prodajnaCijena float CONSTRAINT CH_Cijena CHECK (prodajnaCijena >0),
 VoceID int  CONSTRAINT FK_Voce_Sorta FOREIGN KEY REFERENCES Voce(IDVoce) NOT NULL
 )
 
